@@ -1,0 +1,11 @@
+#letter-form, h1, #shout-form, #reply {
+  text-align: center;
+}
+
+#letter-body {
+  float: left;
+}
+
+#letter-reply {
+  display: none;
+}
