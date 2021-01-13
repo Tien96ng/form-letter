@@ -3,19 +3,12 @@ let letterTemplate = "Lorem Ipsum is simply dummy text of the printing and types
 $(document).ready(function() {
   $("#letter-form").submit(function(event) {
     event.preventDefault();
+    $("span.person").empty(); // Will Remove any existing text in the HTML.
 
-    const name = $("input#name").val();
-    $("span.person").append(name);
-    $("#letter-reply").show();
-
-    /*
-    $("#letter-reply").append(`
-      <p class='letter-body'>
-        Dear ${name}, <br/> ${letterTemplate}
-      </p>
-    `)
-    */
-
+    let name = $("input#name").val(); // Grab Input Value.
+    $("span.person").append(name); // Append the name within the HTML span.
+    $("#letter-reply").show(); // Show the letter body.
+    $(this)[0].reset(); // Clears the Input after submission.
   });
 
   $("#shout-form").submit(function(event) {
@@ -23,7 +16,7 @@ $(document).ready(function() {
 
     const word = $(".some_word").val();
     $("#reply").append(word.toUpperCase());
-
+    $(this)[0].reset(); // Clears the Input after submission.
   });
 
 
